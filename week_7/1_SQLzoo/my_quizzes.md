@@ -17,3 +17,4 @@
 
 
 ### Reflection
+I spent a lot of time on this challenge, as this is the first time I have used SQlite or any type of database management system. I spent a whole day looking at videos and learning the syntax, and another whole day doing the quizzes. I had a few problems when trying to solve the problems. I did not like how the syntax information was stored on the website. I still need to find a place that I can go to find useful information when I am stuck. The quizzes themselves were good, as they were multiple choice. The actual problems brought in new material and had no way of teaching you how to use it.
