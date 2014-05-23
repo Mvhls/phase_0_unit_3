@@ -47,7 +47,8 @@ print_lowest_grade_level_speakers
 
 
 ##### BONUS #######
-# TODO (bonus) - Stop SQL injection attacks!  Statmaster learned that interpolation of variables in SQL statements leaves some security vulnerabilities.  Use the google to figure out how to protect from this type of attack.
+# TODO (bonus) - Stop SQL injection attacks!  Statmaster learned that interpolation of variables in SQL statements leaves some security vulnerabilities. 
+# Use the google to figure out how to protect from this type of attack.
 
 # TODO (bonus)
 # Create a listing of all of the Politicians and the number of votes they recieved

@@ -1,5 +1,5 @@
 $(document).ready(function(){
- 
+var bodyelElement = $('body')
 //RELEASE 0: 
   //Link this script and the jQuery library to the jquery_example.html file and analyze what this code does. 
  

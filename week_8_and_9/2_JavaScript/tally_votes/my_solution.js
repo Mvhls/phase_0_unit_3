@@ -1,6 +1,6 @@
 // U3.W8-9: Gradebook from Names and Scores
 
-// I worked on this challenge [by myself, with:]
+// I worked on this challenge [by myself, with: Colin Trent]
 
 // These are the votes cast by each student. Do not alter these objects here.
 var votes = {
@@ -64,19 +64,97 @@ var officers = {
 }
 
 // Pseudocode
+/*
+create a function tallyVote
+iterate over each person inside votes hash
+iterate over each vote for each person
+push the data into the vote count hash
+
+for each office find the key with the largest value
+set that equal to each hash in the officers variable
+
+
+
+*/
 
 
 // __________________________________________
 // Initial Solution
+/*
+for (var voter in votes){
+  var obj = votes[voter];
+  if (!voteCount.president[obj.president]){
+    voteCount.president[obj.president] = 1;
+  } else{ 
+    voteCount.president[obj.president] += 1;
+  }
+  if (!voteCount.vicePresident[obj.vicePresident]){
+    voteCount.vicePresident[obj.vicePresident] = 1;
+  } else{ 
+    voteCount.vicePresident[obj.vicePresident] += 1;
+  }
+  if (!voteCount.secretary[obj.secretary]){
+    voteCount.secretary[obj.secretary] = 1;
+  } else{ 
+    voteCount.secretary[obj.secretary] += 1;
+  }
+  if (!voteCount.treasurer[obj.treasurer]){
+    voteCount.treasurer[obj.treasurer] = 1;
+  } else{ 
+    voteCount.treasurer[obj.treasurer] += 1;
+  }
+}
 
 
 
-
-
-
-
+for (var office in voteCount ) {
+  winner = 0;
+  for (var candidate in voteCount[office]){
+    if (voteCount[office][candidate] > winner) {
+        winner = voteCount[office][candidate];
+        officers[office] = candidate;
+    }   
+  }
+}
+*/
 // __________________________________________
 // Refactored Solution
+
+/*
+for (var voter in votes) {
+  for (var position in votes[voter]) {
+    obj = votes[voter][position];
+    if (!voteCount[position][obj]) {
+      voteCount[position][obj] = 1
+    }
+    else {
+      voteCount[position][obj] += 1
+    }
+  }
+}
+*/
+
+for (var voter in votes){
+  var obj = votes[voter];
+  for (var position in obj){
+    var person = obj[position];
+    if (!voteCount[position][person]){
+      voteCount[position][person] = 1;
+    } else{
+      voteCount[position][person] += 1;
+    }
+  }
+}
+
+for (var office in voteCount ) {
+  winner = 0;
+  for (var candidate in voteCount[office]){
+    if (voteCount[office][candidate] > winner) {
+        winner = voteCount[office][candidate];
+        officers[office] = candidate;
+    }   
+  }
+}
 
 
 
@@ -85,7 +163,19 @@ var officers = {
 
 // __________________________________________
 // Reflection
-
+/*
+This was a tough challenge! Working with Colin, we were 
+able to complete the first 4 assertions within 45 minutes. I 
+thought the second part of the exercise was going to be easy, 
+but it took the longest! We knew we had to take the largest 
+number out of the hash we made, but didn't know how. I feel it 
+took so long because I was not familiar with the javascript 
+syntax. We were both saying how easy this problem would have 
+been in ruby! After extensive research, we were able to come up
+with a solution involving two different for loops and an if/else 
+statement. After that, we were able to refactor the code from the
+first part using what we had learned from solving the second.
+*/
 
 
 

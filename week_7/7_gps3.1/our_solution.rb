@@ -57,8 +57,8 @@ class GroceryList
 end
 
 class Item
-  what do attr_readers do and how can you use them to solve the above?
-  move on to attr_writers/accessors
+  #what do attr_readers do and how can you use them to solve the above?
+  #move on to attr_writers/accessors
     def initialize(item, quantity)
         @item = item
         @quantity = quantity
