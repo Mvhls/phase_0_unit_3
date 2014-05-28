@@ -16,11 +16,12 @@ end
 
 def print_longest_serving_reps(minimum_years)  #sorry guys, oracle needs me, i didn't finish this!
   puts "LONGEST SERVING REPRESENTATIVES"
-  puts $db.execute("SELECT name FROM congress_members WHERE years_in_congress > #{minimum_years}")
+  puts $db.execute("SELECT name, years_in_congress FROM congress_members WHERE years_in_congress > #{minimum_years}")
 end
 
-def print_lowest_grade_level_speakers
-  puts "LOWEST GRADE LEVEL SPEAKERS (less than < 8th grade)"
+def print_lowest_grade_level_speakers(grade)
+  puts "LOWEST GRADE LEVEL SPEAKERS (less than < grade #{grade})"
+  puts $db.execute("SELECT name FROM congress_members WHERE grade_current < #{grade}")
 end
 
 def print_separator
@@ -39,7 +40,7 @@ print_longest_serving_reps(35)
 # output should look like:  Rep. C. W. Bill Young - 41 years
 
 print_separator
-print_lowest_grade_level_speakers 
+print_lowest_grade_level_speakers(8) 
 # TODO - Need to be able to pass the grade level as an argument, look in schema for "grade_current" column
 
 # TODO - Make a method to print the following states representatives as well:
@@ -47,23 +48,37 @@ print_lowest_grade_level_speakers
 
 
 ##### BONUS #######
-# TODO (bonus) - Stop SQL injection attacks!  Statmaster learned that interpolation of variables in SQL statements leaves some security vulnerabilities.  Use the google to figure out how to protect from this type of attack.
+# TODO (bonus) - Stop SQL injection attacks!  
+# Statmaster learned that interpolation of variables in SQL 
+# statements leaves some security vulnerabilities. Use the 
+# google to figure out how to protect from this type of attack.
 
 # TODO (bonus)
-# Create a listing of all of the Politicians and the number of votes they recieved
-# output should look like:  Sen. John McCain - 7,323 votes (This is an example, yours will not return this value, it should just 
-#    have a similar format)
-# Create a listing of each Politician and the voter that voted for them
-# output should include the senators name, then a long list of voters separated by a comma
+# Create a listing of all of the Politicians and the number of 
+# votes they recieved
+# output should look like:  Sen. John McCain - 7,323 votes (This 
+# is an example, yours will not return this value, it should just 
+# have a similar format)
+# Create a listing of each Politician and the voter that voted 
+# for them
+# output should include the senators name, then a long list of 
+#voters separated by a comma
 #
-# * you'll need to do some join statements to complete these last queries!
+# * you'll need to do some join statements to complete these
+# last queries!
 
 
 # REFLECTION- Include your reflection as a comment below.
-# How does the sqlite3 gem work?  What is the variable `$db` holding?  
-# Try to use your knowledge of ruby and OO to decipher this as well as h
-# ow the `#execute` method works.  Take a stab at explaining the line 
-# `$db.execute("SELECT name FROM congress_members WHERE years_in_congress 
-#   > #{minimum_years}")`.  Try to explain this as clearly as possible for 
-# your fellow students.  
-# If you're having trouble, find someone to pair on this explanation with you.
+=begin 
+How does the sqlite3 gem work?  What is the variable `$db` holding?  
+
+Try to use your knowledge of ruby and OO to decipher this as well as h
+
+ow the `#execute` method works.  Take a stab at explaining the line 
+`$db.execute("SELECT name FROM congress_members WHERE years_in_congress 
+> #{minimum_years}")`.  Try to explain this as clearly as possible for 
+your fellow students.  
+
+If you're having trouble, find someone to pair on this explanation with you.
+
+=end
