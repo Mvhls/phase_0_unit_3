@@ -76,6 +76,12 @@ students[3] = Student.new("Brian", [1, 2, 3, 4, 5])
 students[4] = Student.new("Tim", [1, 2, 3, 4, 5])
 
 # 4. Refactored Solution
+def binary_search(array, target, lower = 0, upper = array.length)
+	while upper >= lower
+		mid = (upper + lower) / 2
+		if self[mid] < element
+			lower = mid - 1
+		elsif 
 
 
 
