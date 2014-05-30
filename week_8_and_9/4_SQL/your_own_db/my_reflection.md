@@ -1,0 +1,1 @@
+Before this challenge, I was horrible at sql. Now, I am not an expert, but I am a little bit better. I used this challenge to help memorize the statements and syntax needed to use sql. Once I use it more, I will be even better.
